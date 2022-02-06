@@ -8,8 +8,10 @@ let interval;
 export default () => {
   const img = useRef(null);
 
-  const imgWidth = () => img.current.getBoundingClientRect().width;
-  const imgHeight = () => img.current.getBoundingClientRect().height;
+  // If the browser thinks the image’s dimensions are 0, we make a guess.
+  const imgWidth = () => img.current.getBoundingClientRect().width || 150;
+  const imgHeight = () => img.current.getBoundingClientRect().height || 280;
+
   const random = (max) => Math.floor(Math.random() * max);
   const randomWidth = () => random(window.innerWidth - imgWidth());
   const randomHeight = () => random(window.innerHeight - imgHeight());
@@ -42,10 +44,7 @@ export default () => {
   useEffect(() => {
     clearInterval(interval);
 
-    // This prevents the image’s width from being "0" to start.
-    setTimeout(() => {
-      move();
-    }, 0);
+    move();
 
     interval = setInterval(() => {
       move();
