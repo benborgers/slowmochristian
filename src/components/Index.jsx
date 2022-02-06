@@ -56,7 +56,7 @@ export default () => {
   return (
     <div className="h-screen">
       <img
-        src="/christian.jpg"
+        src="christian.jpg"
         className="h-[30vh] rounded absolute top-0 left-0"
         ref={img}
       />
