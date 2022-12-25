@@ -61,7 +61,7 @@ export default () => {
         ref={img}
       />
 
-      <div className="bg-white/20 backdrop-blur-md fixed bottom-6 inset-x-0 mx-auto w-[calc(100vw-2rem)] max-w-[24rem] px-6 pb-3 pt-4 rounded-full">
+      <div className="bg-white/20 backdrop-blur-md fixed top-6 inset-x-0 mx-auto w-[calc(100vw-2rem)] max-w-[24rem] px-6 pb-3 pt-4 rounded-full">
         <div className="w-full">
           <Slider.Root
             min={0}
@@ -79,7 +79,7 @@ export default () => {
         </div>
 
         <p
-          className={`mt-2 font-bold text-center text-white ${
+          className={`mt-3 font-bold text-center text-white ${
             speed < 50 ? "" : "italic"
           }`}
         >
