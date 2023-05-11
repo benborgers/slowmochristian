@@ -60,7 +60,7 @@ export default () => {
         ref={img}
       />
 
-      <div className="bg-white/20 backdrop-blur-md fixed top-6 inset-x-0 mx-auto w-[calc(100vw-2rem)] max-w-[24rem] px-6 pb-3 pt-4 rounded-full">
+      <div className="bg-white/20 [&:has(input:active)]:bg-white/25 transition-colors backdrop-blur-md fixed top-6 inset-x-0 mx-auto w-[calc(100vw-2rem)] max-w-[24rem] px-6 pb-3 pt-4 rounded-full">
         <div className="w-full">
           <input
             type="range"
