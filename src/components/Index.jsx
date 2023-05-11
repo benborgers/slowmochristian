@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import * as Slider from "@radix-ui/react-slider";
 
 const SIDES = ["right", "top", "left", "bottom"];
 let sideIndex = 0;
@@ -63,23 +62,18 @@ export default () => {
 
       <div className="bg-white/20 backdrop-blur-md fixed top-6 inset-x-0 mx-auto w-[calc(100vw-2rem)] max-w-[24rem] px-6 pb-3 pt-4 rounded-full">
         <div className="w-full">
-          <Slider.Root
-            min={0}
-            max={100}
-            value={[speed]}
-            onValueChange={(value) => setSpeed(value)}
-            className="relative flex items-center"
-          >
-            <Slider.Track className="relative h-1 w-full bg-white/30 rounded-full">
-              <Slider.Range className="absolute bg-white/80 h-full rounded-l-full" />
-            </Slider.Track>
-
-            <Slider.Thumb className="block h-4 w-4 bg-white shadow rounded-full outline-none cursor-pointer" />
-          </Slider.Root>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value={speed}
+            onChange={(e) => setSpeed(parseInt(e.target.value))}
+            className="w-full"
+          />
         </div>
 
         <p
-          className={`mt-3 font-bold text-center text-white ${
+          className={`mt-1 font-bold text-center text-white ${
             speed < 50 ? "" : "italic"
           }`}
         >
